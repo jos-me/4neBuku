@@ -15,6 +15,9 @@ input[type="search"] {
   min-width: 155px;
   max-width: 300px;
 }
+.add-btn {
+  cursor: pointer;
+}
 
 .modal-container {
   background-color: rgba(0, 0, 0, 0.34);
