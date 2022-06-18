@@ -24,8 +24,53 @@
       </div>
     </header>
     <main>
-      <section>
-        <div class="container"></div>
+      <section
+        id="modal-container"
+        class="modal-container position-absolute vw-100 d-none"
+      >
+        <div
+          class="modal-form mx-lg-auto w-lg-25 shadow-sm bg-light p-5 position-relative"
+        >
+          <button
+            id="btn-close"
+            class="btn close-btn position-absolute offset-9 top-0 mt-4 border border-1 py-0 text-secondary fs-4"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="mb-4">
+            <h2 class="text-primary py-2 fs-5">Add Contact</h2>
+            <div id="submit-alert" class="alert small py-2 rounded-0"></div>
+          </div>
+          <form action="" class="">
+            <div class="mb-3">
+              <label for="" class="form-label">Full Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="John Doe"
+                class="form-control rounded-0"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="" class="form-label">Phone</label>
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                placeholder="0123456789"
+                class="form-control rounded-0"
+              />
+            </div>
+            <div class="text-end">
+              <input
+                type="submit"
+                value="Save"
+                class="btn btn-outline-dark rounded-0 w-50"
+              />
+            </div>
+          </form>
+        </div>
       </section>
       <section class="">
         <div class="container w-lg-75 mx-md-auto shadow-sm p-4 px-md-5">
