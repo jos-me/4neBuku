@@ -6,6 +6,16 @@
   max-width: 500px;
 }
 
+select.w-25 {
+  min-width: 82px;
+  max-width: 110px;
+}
+
+input[type="search"] {
+  min-width: 155px;
+  max-width: 300px;
+}
+
 .modal-container {
   background-color: rgba(0, 0, 0, 0.34);
   height: 91.2vh;
