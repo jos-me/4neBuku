@@ -15,3 +15,16 @@ function showModal(e) {
 function closeModal() {
   modalContainer.classList.add("d-none");
 }
+
+// Accordion
+
+let accordion = document.querySelector("#contact__accordion");
+let accordionInfo = document.querySelector("#contact__accordion-info");
+let chevron = document.querySelector(".fa-chevron-down");
+
+accordion.addEventListener("click", displayContacts);
+
+function displayContacts() {
+  accordionInfo.classList.toggle("d-none");
+  chevron.classList.toggle("rotate");
+}

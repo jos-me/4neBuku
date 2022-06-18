@@ -15,9 +15,37 @@ input[type="search"] {
   min-width: 155px;
   max-width: 300px;
 }
+
 .add-btn {
   cursor: pointer;
 }
+
+/* Accordion */
+.contact__accordion {
+  cursor: pointer;
+}
+
+.delete_icon,
+.edit_icon {
+  cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  color: hsl(45, 100%, 29%);
+}
+
+.accordion-info {
+  animation: fadein 2s ease-in-out;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+}
+
+/* Modal */
 
 .modal-container {
   background-color: rgba(0, 0, 0, 0.34);
