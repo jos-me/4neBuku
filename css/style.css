@@ -1,0 +1,29 @@
+.w-lg-75 {
+  max-width: 800px;
+}
+
+.w-lg-25 {
+  max-width: 500px;
+}
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.34);
+  height: 91.2vh;
+  z-index: 2;
+}
+
+.modal-container,
+.modal-form {
+  animation: popup 2s ease-in-out;
+}
+
+@keyframes popup {
+  0% {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
