@@ -26,3 +26,26 @@ accordion.forEach((element) => {
     element.firstElementChild.firstElementChild.classList.toggle("rotate");
   });
 });
+
+// let accordionDisplay = function (element) {
+//   element.nextElementSibling.classList.toggle("d-none");
+//   element.firstElementChild.firstElementChild.classList.toggle("rotate");
+// };
+
+// accordion.forEach((element) => {
+//   element.addEventListener("click", accordionDisplay(element), false);
+//   element.addEventListener("touchstart", accordionDisplay(element), false);
+// });
+
+let events = ["click", "touchstart"];
+
+events.forEach((evnt) => {
+  accordion.forEach((element) => {
+    element.addEventListener(evnt, accordionToggler(element));
+  });
+});
+
+function accordionToggler(element) {
+  element.nextElementSibling.classList.toggle("d-none");
+  element.firstElementChild.firstElementChild.classList.toggle("rotate");
+}
