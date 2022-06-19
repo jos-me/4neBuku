@@ -24,11 +24,18 @@ accordionsHeader.forEach((accordionHeader) => {
   accordionHeader.addEventListener("click", (e) => {
     accordionsBody.forEach((accordionBody) => {
       if (
-        e.target.nextElementSibling !== accordionBody &&
-        accordionBody.classList.contains("d-none")
+        !(
+          e.target.nextElementSibling !== accordionBody &&
+          accordionBody.classList.contains("d-none")
+        )
       ) {
-        //TODO: Fix to make only one accordion item to open
-        accordionBody.classList.remove("d-none");
+        accordionBody.classList.add("d-none");
+        accordionsHeader.forEach((accordionHeader) => {
+          accordionHeader.nextElementSibling.classList.add("d-none");
+          accordionHeader.firstElementChild.firstElementChild.classList.remove(
+            "rotate"
+          );
+        });
       }
     });
 
@@ -38,3 +45,21 @@ accordionsHeader.forEach((accordionHeader) => {
     accordionHeader.nextElementSibling.classList.toggle("d-none");
   });
 });
+
+window.onclick = (e) => {
+  if (!e.target.matches("#accordion-header")) {
+    accordionsHeader.forEach((accordionHeader) => {
+      accordionHeader.nextElementSibling.classList.add("d-none");
+      accordionHeader.firstElementChild.firstElementChild.classList.remove(
+        "rotate"
+      );
+    });
+  }
+
+  if (
+    e.target.matches(".modal-container") &&
+    !e.target.matches(".modal-form")
+  ) {
+    closeModal();
+  }
+};
