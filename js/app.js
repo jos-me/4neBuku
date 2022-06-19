@@ -7,8 +7,7 @@ let modalContainer = document.querySelector(".modal-container");
 addBtn.addEventListener("click", showModal);
 closeBtn.addEventListener("click", closeModal);
 
-function showModal(e) {
-  e.preventDefault();
+function showModal() {
   modalContainer.classList.remove("d-none");
 }
 
@@ -18,34 +17,15 @@ function closeModal() {
 
 // Accordion
 
-let accordion = document.querySelectorAll("#contact__accordion");
+let accordions = document.querySelectorAll("#contact__accordion");
 
-accordion.forEach((element) => {
-  element.addEventListener("click", () => {
-    element.nextElementSibling.classList.toggle("d-none");
-    element.firstElementChild.firstElementChild.classList.toggle("rotate");
-  });
+accordions.forEach((accordion) => {
+  accordion.addEventListener("click", accordionToggler);
 });
 
-// let accordionDisplay = function (element) {
-//   element.nextElementSibling.classList.toggle("d-none");
-//   element.firstElementChild.firstElementChild.classList.toggle("rotate");
-// };
+function accordionToggler(e) {
+  let element = e.target;
 
-// accordion.forEach((element) => {
-//   element.addEventListener("click", accordionDisplay(element), false);
-//   element.addEventListener("touchstart", accordionDisplay(element), false);
-// });
-
-let events = ["click", "touchstart"];
-
-events.forEach((evnt) => {
-  accordion.forEach((element) => {
-    element.addEventListener(evnt, accordionToggler(element));
-  });
-});
-
-function accordionToggler(element) {
   element.nextElementSibling.classList.toggle("d-none");
   element.firstElementChild.firstElementChild.classList.toggle("rotate");
 }

@@ -1,6 +1,10 @@
+/* Container */
+
 .w-lg-75 {
   max-width: 800px;
 }
+
+/* INPUTS & SELECT */
 
 .w-lg-25 {
   max-width: 500px;
@@ -15,6 +19,8 @@ input[type="search"] {
   min-width: 155px;
   max-width: 300px;
 }
+
+/* Add contact Btn */
 
 .add-btn {
   cursor: pointer;
@@ -35,22 +41,6 @@ input[type="search"] {
   color: hsl(45, 100%, 29%);
 }
 
-.accordion-info {
-  animation: fadein 250ms ease-in-out;
-  overflow: hidden;
-}
-
-@keyframes fadein {
-  0% {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  100% {
-    opacity: 100;
-    transform: translate(0px);
-  }
-}
-
 /* Modal */
 
 .modal-container {
@@ -59,9 +49,11 @@ input[type="search"] {
   z-index: 2;
 }
 
+/* ANIMATIONS */
+
 .modal-container,
 .modal-form {
-  animation: popup 2s ease-in-out;
+  animation: popup 1.5s ease-in-out;
 }
 
 @keyframes popup {
@@ -72,5 +64,20 @@ input[type="search"] {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+.accordion-info {
+  animation: fadein 2s ease-in-out;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0.3;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
   }
 }
