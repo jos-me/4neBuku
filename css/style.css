@@ -37,11 +37,17 @@ input[type="search"] {
 
 .accordion-info {
   animation: fadein 250ms ease-in-out;
+  overflow: hidden;
 }
 
 @keyframes fadein {
   0% {
     opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 100;
+    transform: translate(0px);
   }
 }
 
