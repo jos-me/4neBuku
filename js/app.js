@@ -24,8 +24,9 @@ accordions.forEach((accordion) => {
 });
 
 function accordionToggler(e) {
-  let element = e.target;
+  let accordionElement = e.target.nextElementSibling;
+  let accordionIcon = e.target.firstElementChild.firstElementChild;
 
-  element.nextElementSibling.classList.toggle("d-none");
-  element.firstElementChild.firstElementChild.classList.toggle("rotate");
+  accordionElement.classList.toggle("d-none");
+  accordionIcon.classList.toggle("rotate");
 }
