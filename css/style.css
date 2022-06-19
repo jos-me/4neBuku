@@ -27,7 +27,7 @@ input[type="search"] {
 }
 
 /* Accordion */
-.contact__accordion {
+#accordion-header {
   cursor: pointer;
 }
 
@@ -67,7 +67,7 @@ input[type="search"] {
   }
 }
 
-.accordion-info {
+#accordion-body {
   animation: fadein 2s ease-in-out;
 }
 

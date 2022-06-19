@@ -17,16 +17,24 @@ function closeModal() {
 
 // Accordion
 
-let accordions = document.querySelectorAll("#contact__accordion");
+let accordionsHeader = document.querySelectorAll("#accordion-header");
+let accordionsBody = document.querySelectorAll("#accordion-body");
 
-accordions.forEach((accordion) => {
-  accordion.addEventListener("click", accordionToggler);
+accordionsHeader.forEach((accordionHeader) => {
+  accordionHeader.addEventListener("click", (e) => {
+    accordionsBody.forEach((accordionBody) => {
+      if (
+        e.target.nextElementSibling !== accordionBody &&
+        accordionBody.classList.contains("d-none")
+      ) {
+        //TODO: Fix to make only one accordion item to open
+        accordionBody.classList.remove("d-none");
+      }
+    });
+
+    accordionHeader.firstElementChild.firstElementChild.classList.toggle(
+      "rotate"
+    );
+    accordionHeader.nextElementSibling.classList.toggle("d-none");
+  });
 });
-
-function accordionToggler(e) {
-  let accordionElement = e.target.nextElementSibling;
-  let accordionIcon = e.target.firstElementChild.firstElementChild;
-
-  accordionElement.classList.toggle("d-none");
-  accordionIcon.classList.toggle("rotate");
-}
