@@ -32,14 +32,14 @@ accordionsHeader.forEach((accordionHeader) => {
         accordionBody.classList.add("d-none");
         accordionsHeader.forEach((accordionHeader) => {
           accordionHeader.nextElementSibling.classList.add("d-none");
-          accordionHeader.firstElementChild.firstElementChild.classList.remove(
+          accordionHeader.lastElementChild.firstElementChild.classList.remove(
             "rotate"
           );
         });
       }
     });
 
-    accordionHeader.firstElementChild.firstElementChild.classList.toggle(
+    accordionHeader.lastElementChild.firstElementChild.classList.toggle(
       "rotate"
     );
     accordionHeader.nextElementSibling.classList.toggle("d-none");
@@ -72,6 +72,26 @@ btnCopy.forEach((btn) => {
   });
 });
 
+// Search contacts: filter by name
+
+let filter = document.querySelector("#search");
+
+filter.addEventListener("keyup", (e) => {
+  let listItems = document.querySelectorAll("#item");
+
+  listItems.forEach((item) => {
+    itemName =
+      item.firstElementChild.firstElementChild.textContent.toLowerCase();
+    filterText = e.target.value.toLowerCase();
+
+    if (itemName.indexOf(filterText) != -1) {
+      item.classList.remove("d-none");
+    } else {
+      item.classList.add("d-none");
+    }
+  });
+});
+
 // Window
 
 window.onclick = (e) => {
@@ -80,7 +100,7 @@ window.onclick = (e) => {
   if (!e.target.matches("#accordion-header") && !e.target.matches(excludes)) {
     accordionsHeader.forEach((accordionHeader) => {
       accordionHeader.nextElementSibling.classList.add("d-none");
-      accordionHeader.firstElementChild.firstElementChild.classList.remove(
+      accordionHeader.lastElementChild.firstElementChild.classList.remove(
         "rotate"
       );
     });
@@ -93,8 +113,6 @@ window.onclick = (e) => {
     closeModal();
   }
 };
-
-// TODO: Search contacts: filter by name
 
 // TODO: Sort contacts: order by name or date
 
