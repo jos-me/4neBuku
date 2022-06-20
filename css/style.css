@@ -60,6 +60,32 @@ input[type="search"] {
   z-index: 2;
 }
 
+/* Copy Tooltip */
+.copier {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.tool-tip {
+  left: -25%;
+  top: -100%;
+}
+
+.tool-tip_text {
+  width: max-content;
+  z-index: 1;
+}
+
+.tool-tip_text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  border-style: solid;
+  border-width: 6px;
+  border-color: #6c757d transparent transparent transparent;
+}
+
 /* ANIMATIONS */
 
 .modal-container,

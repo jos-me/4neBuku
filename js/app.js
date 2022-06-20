@@ -46,10 +46,11 @@ accordionsHeader.forEach((accordionHeader) => {
   });
 });
 
+// Window
 window.onclick = (e) => {
   if (
     !e.target.matches("#accordion-header") &&
-    !e.target.matches("#accordion-body>content")
+    !e.target.matches("#accordion-body>div#content")
   ) {
     accordionsHeader.forEach((accordionHeader) => {
       accordionHeader.nextElementSibling.classList.add("d-none");
@@ -67,7 +68,38 @@ window.onclick = (e) => {
   }
 };
 
-// TODO Copy to Clipboard
+// Copy to Clipboard
+let btnCopy = document.querySelectorAll(".copy_icon");
+
+btnCopy.forEach((btn) => {
+  btn.addEventListener("mouseenter", (e) => {
+    accordionsBody.forEach((body) => {
+      let tel = body.lastElementChild.firstElementChild.lastElementChild;
+      let phone =
+        e.target.parentElement.previousElementSibling.lastElementChild;
+
+      if (tel === phone) {
+        let toolTip = e.target.lastElementChild.firstElementChild;
+        toolTip.classList.remove("visually-hidden");
+
+        navigator.clipboard.writeText(phone.textContent);
+      }
+    });
+  });
+
+  btn.addEventListener("mouseleave", (e) => {
+    accordionsBody.forEach((body) => {
+      let tel = body.lastElementChild.firstElementChild.lastElementChild;
+      let phone =
+        e.target.parentElement.previousElementSibling.lastElementChild;
+
+      if (tel === phone) {
+        let toolTip = e.target.lastElementChild.firstElementChild;
+        toolTip.classList.add("visually-hidden");
+      }
+    });
+  });
+});
 
 // TODO: Search contacts: filter by name
 
