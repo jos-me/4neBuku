@@ -46,12 +46,38 @@ accordionsHeader.forEach((accordionHeader) => {
   });
 });
 
+// Copy to Clipboard
+
+let btnCopy = document.querySelectorAll(".copy_icon");
+
+btnCopy.forEach((btn) => {
+  btn.addEventListener("mousedown", (e) => {
+    accordionsBody.forEach((body) => {
+      let tel = body.lastElementChild.firstElementChild.lastElementChild;
+      let phone =
+        e.target.parentElement.parentElement.parentElement.firstElementChild
+          .lastElementChild;
+      let toolTip = e.target.parentElement.lastElementChild.firstElementChild;
+
+      if (tel === phone) {
+        toolTip.classList.remove("visually-hidden");
+
+        setTimeout(() => {
+          toolTip.classList.add("visually-hidden");
+        }, 2000);
+
+        navigator.clipboard.writeText(phone.textContent);
+      }
+    });
+  });
+});
+
 // Window
+
 window.onclick = (e) => {
-  if (
-    !e.target.matches("#accordion-header") &&
-    !e.target.matches("#accordion-body>div#content")
-  ) {
+  let excludes =
+    "#accordion-body, #accordion-body>*, #accordion-body>*>*, #accordion-body>*>*>*, #accordion-body>*>*>*>*";
+  if (!e.target.matches("#accordion-header") && !e.target.matches(excludes)) {
     accordionsHeader.forEach((accordionHeader) => {
       accordionHeader.nextElementSibling.classList.add("d-none");
       accordionHeader.firstElementChild.firstElementChild.classList.remove(
@@ -67,39 +93,6 @@ window.onclick = (e) => {
     closeModal();
   }
 };
-
-// Copy to Clipboard
-let btnCopy = document.querySelectorAll(".copy_icon");
-
-btnCopy.forEach((btn) => {
-  btn.addEventListener("mouseenter", (e) => {
-    accordionsBody.forEach((body) => {
-      let tel = body.lastElementChild.firstElementChild.lastElementChild;
-      let phone =
-        e.target.parentElement.previousElementSibling.lastElementChild;
-
-      if (tel === phone) {
-        let toolTip = e.target.lastElementChild.firstElementChild;
-        toolTip.classList.remove("visually-hidden");
-
-        navigator.clipboard.writeText(phone.textContent);
-      }
-    });
-  });
-
-  btn.addEventListener("mouseleave", (e) => {
-    accordionsBody.forEach((body) => {
-      let tel = body.lastElementChild.firstElementChild.lastElementChild;
-      let phone =
-        e.target.parentElement.previousElementSibling.lastElementChild;
-
-      if (tel === phone) {
-        let toolTip = e.target.lastElementChild.firstElementChild;
-        toolTip.classList.add("visually-hidden");
-      }
-    });
-  });
-});
 
 // TODO: Search contacts: filter by name
 
