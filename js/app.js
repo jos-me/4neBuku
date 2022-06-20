@@ -47,7 +47,10 @@ accordionsHeader.forEach((accordionHeader) => {
 });
 
 window.onclick = (e) => {
-  if (!e.target.matches("#accordion-header")) {
+  if (
+    !e.target.matches("#accordion-header") &&
+    !e.target.matches("#accordion-body>content")
+  ) {
     accordionsHeader.forEach((accordionHeader) => {
       accordionHeader.nextElementSibling.classList.add("d-none");
       accordionHeader.firstElementChild.firstElementChild.classList.remove(
@@ -63,3 +66,15 @@ window.onclick = (e) => {
     closeModal();
   }
 };
+
+// TODO Copy to Clipboard
+
+// TODO: Search contacts: filter by name
+
+// TODO: Sort contacts: order by name or date
+
+// TODO: CRUD: create, read, update,delete contacts
+
+// TODO: localStorage: store contacts locally on browser
+
+// TODO: Recycle bin:
