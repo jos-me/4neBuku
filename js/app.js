@@ -125,7 +125,22 @@ let alert = document.querySelector("#submit-alert");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  // getValueOnSubmission();
+  console.log(getValueOnSubmission());
 });
+
+function getValueOnSubmission() {
+  alertOnSubmission(text, tel);
+
+  setTimeout(() => {
+    text.value = "";
+    tel.value = "";
+  }, 3000);
+
+  // get name and phone from the submitted form
+  return { names: text.value, phone: tel.value };
+}
 
 function alertOnSubmission(text, tel) {
   if (text.value == "" && tel.value == "") {
