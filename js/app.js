@@ -158,7 +158,7 @@ function addNewContact(text, tel) {
   let copyDiv = document.createElement("div");
   let iconCopy = document.createElement("i");
   let toolTip = document.createElement("div");
-  let toolTipSpan = document.createElement("span");
+  let toolTipText = document.createElement("span");
 
   let lastDiv = document.createElement("div");
   let iconInfo = document.createElement("i");
@@ -179,7 +179,7 @@ function addNewContact(text, tel) {
   iconChevron.className = "fa-solid fa-chevron-down";
 
   body.id = "accordion-body";
-  body.className = "pt-2 pb-1 shadow-sm rounded-bottom w-100 d-none";
+  body.className = "pt-2 pb-1 shadow-sm rounded-bottom w-100 dnone";
   content.id = "content";
   content.className = "ps-3 pe-2 d-flex justify-content-between";
 
@@ -190,12 +190,12 @@ function addNewContact(text, tel) {
 
   contentLastDiv.className = "d-flex small position-relative";
   firstDiv.id = "copy_icon";
-  firstDiv.className = "copy_icon text-secondary p-1 me-3";
+  firstDiv.className = "copy_icon text-secondary p-1 me-1";
   copyDiv.id = "copy_icon";
-  copyDiv.className = "copy_icon text-secondary p-1 me-3";
+  copyDiv.className = "copy_icon text-secondary p-1 me-1";
   iconCopy.className = "fa-solid fa-copy";
   toolTip.className = "d-inline-block position-absolute tool-tip";
-  toolTipSpan.className =
+  toolTipText.className =
     "visually-hidden bg-secondary text-white px-2 pb-1 small rounded-1 position-absolute tool-tip_text";
 
   lastDiv.className = "info_icon text-primary p-1 me-2";
@@ -226,8 +226,8 @@ function addNewContact(text, tel) {
   firstDiv.appendChild(copyDiv);
   copyDiv.appendChild(iconCopy);
   copyDiv.appendChild(toolTip);
-  toolTip.appendChild(toolTipSpan);
-  toolTipSpan.appendChild(document.createTextNode("copied"));
+  toolTip.appendChild(toolTipText);
+  toolTipText.appendChild(document.createTextNode("copied"));
 
   contentLastDiv.appendChild(lastDiv);
   lastDiv.appendChild(iconInfo);
