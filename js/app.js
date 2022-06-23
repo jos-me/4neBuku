@@ -116,7 +116,42 @@ window.onclick = (e) => {
 
 // TODO: Sort contacts: order by name or date
 
-// TODO: CRUD: create, read, update,delete contacts
+// TODO: CRUD: create contacts
+
+let form = document.querySelector(".contact-form");
+let text = document.querySelector("#name");
+let tel = document.querySelector("#tel");
+let alert = document.querySelector("#submit-alert");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
+function alertOnSubmission(text, tel) {
+  if (text.value == "" && tel.value == "") {
+    alert.classList.add("alert-danger");
+    alert.textContent = "fields are empty!";
+  } else if (text.value == "") {
+    alert.classList.add("alert-danger");
+    alert.textContent = "name is empty!";
+  } else if (tel.value == "") {
+    alert.classList.add("alert-danger");
+    alert.textContent = "phone is empty!";
+  } else {
+    alert.classList.remove();
+    alert.classList.remove("alert-danger");
+    alert.classList.add("alert-success");
+    alert.textContent = "Contact saved!";
+  }
+
+  setTimeout(() => {
+    alert.classList.remove("alert-danger");
+    alert.classList.remove("alert-success");
+    alert.textContent = "";
+  }, 3000);
+}
+
+// TODO: CRUD: read, update,delete contacts
 
 // TODO: localStorage: store contacts locally on browser
 
