@@ -181,7 +181,8 @@ function addNewContact(text, tel) {
   body.id = "accordion-body";
   body.className = "pt-2 pb-1 shadow-sm rounded-bottom w-100 dnone";
   content.id = "content";
-  content.className = "ps-3 pe-2 d-flex justify-content-between";
+  content.className =
+    "ps-3 pe-2 d-flex justify-content-between align-items-center";
 
   contentFirstDiv.className = "text-secondary small";
   iconPhone.className = "fa-solid fa-blender-phone";
