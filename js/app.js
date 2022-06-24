@@ -164,7 +164,7 @@ function addNewContact(text, tel) {
   // Accordion Body
   let body = document.createElement("div");
   body.id = "accordion-body";
-  body.className = "pt-2 pb-1 shadow-sm rounded-bottom w-100 dnone";
+  body.className = "pt-2 pb-1 shadow-sm rounded-bottom w-100 d-none";
 
   let content = document.createElement("div");
   content.id = "content";
