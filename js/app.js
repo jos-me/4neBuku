@@ -242,7 +242,7 @@ function addNewContact(text, tel) {
 
   // insert to dom
   let container = document.querySelector(".contact-section > .container");
-  let reference = document.querySelector("#reference");
+  let reference = document.querySelector(".reference");
   container.insertBefore(ul, reference);
 }
 
