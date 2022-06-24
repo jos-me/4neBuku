@@ -139,69 +139,76 @@ form.addEventListener("submit", (e) => {
 function addNewContact(text, tel) {
   //Create new Element
   let ul = document.createElement("ul");
-  let li = document.createElement("li");
-
-  let header = document.createElement("div");
-  let spanName = document.createElement("span");
-  let spanIcon = document.createElement("span");
-  let iconChevron = document.createElement("i");
-
-  let body = document.createElement("div");
-  let content = document.createElement("div");
-
-  let contentFirstDiv = document.createElement("div");
-  let iconPhone = document.createElement("i");
-  let anchorPhone = document.createElement("a");
-
-  let contentLastDiv = document.createElement("div");
-  let firstDiv = document.createElement("div");
-  let copyDiv = document.createElement("div");
-  let iconCopy = document.createElement("i");
-  let toolTip = document.createElement("div");
-  let toolTipText = document.createElement("span");
-
-  let lastDiv = document.createElement("div");
-  let iconInfo = document.createElement("i");
-
-  // Add attributes (classes, ids)
   ul.id = "accordion";
   ul.className = "list-group list-group-flush";
 
+  let li = document.createElement("li");
   li.id = "item";
   li.className =
     "list-group-item fs-6 p-0 d-flex flex-wrap justify-content-between align-items-center";
 
+  // Accordion Header
+  let header = document.createElement("div");
   header.id = "accordion-header";
   header.className =
     "w-100 d-flex justify-content-between align-items-center p-2 bg-light";
 
+  let spanName = document.createElement("span");
+
+  let spanIcon = document.createElement("span");
   spanIcon.className = "badge text-secondary";
+
+  let iconChevron = document.createElement("i");
   iconChevron.className = "fa-solid fa-chevron-down";
 
+  // Accordion Body
+  let body = document.createElement("div");
   body.id = "accordion-body";
   body.className = "pt-2 pb-1 shadow-sm rounded-bottom w-100 dnone";
+
+  let content = document.createElement("div");
   content.id = "content";
   content.className =
     "ps-3 pe-2 d-flex justify-content-between align-items-center";
 
+  let contentFirstDiv = document.createElement("div");
   contentFirstDiv.className = "text-secondary small";
+
+  let iconPhone = document.createElement("i");
   iconPhone.className = "fa-solid fa-blender-phone";
+
+  let anchorPhone = document.createElement("a");
   anchorPhone.href = "tel:"; // TODO: add numbers implicitly
   anchorPhone.className = "text-secondary text-decoration-none ms-1";
 
+  let contentLastDiv = document.createElement("div");
   contentLastDiv.className = "d-flex small position-relative";
+
+  let firstDiv = document.createElement("div");
   firstDiv.id = "copy_icon";
   firstDiv.className = "copy_icon text-secondary p-1 me-1";
+
+  let copyDiv = document.createElement("div");
   copyDiv.id = "copy_icon";
   copyDiv.className = "copy_icon text-secondary p-1 me-1";
+
+  let iconCopy = document.createElement("i");
   iconCopy.className = "fa-solid fa-copy";
+
+  let toolTip = document.createElement("div");
   toolTip.className = "d-inline-block position-absolute tool-tip";
+
+  let toolTipText = document.createElement("span");
   toolTipText.className =
     "visually-hidden bg-secondary text-white px-2 pb-1 small rounded-1 position-absolute tool-tip_text";
 
+  let lastDiv = document.createElement("div");
   lastDiv.className = "info_icon text-primary p-1 me-2";
+
+  let iconInfo = document.createElement("i");
   iconInfo.id = "info_icon";
   iconInfo.className = "fa-solid fa-circle-info";
+
 
   // Create TextNodes
   ul.appendChild(li);
